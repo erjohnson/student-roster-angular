@@ -127,7 +127,6 @@ input[type=search] {
   background: #000;
   display: inline-block;
   margin: 1.5em 0;
-  font-size: 110%;
   padding: 1em;
 }
 .btn:hover, .btn:focus {

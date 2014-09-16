@@ -6,41 +6,10 @@
   <script src="lib/angular.js"></script>
   <script src="lib/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="js/StudentsController.js"></script>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="controllers/StudentsController.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-  <div class="container" ng-controller="StudentsCtrl">
-    <div ng-show="students.length">
-      <h4>Search Students</h4>
-      <form role="form">
-        <input ng-model="query" type="text" id="student-name" placeholder="Search">
-      </form>
-    </div>
-    <hr>
-    <h2 ng-show="students.length && filtered.length">Student List</h2>
-    <h2 ng-show="students.length && !filtered.length">No Matches</h2>
-    <ul>
-      <li ng-repeat="item in filtered = (students | filter:query)">
-        <span ng-hide="editing" ng-click="editing = true">
-          {{item.name}} <a ng-click="deleteStudent(item)">Delete</a>
-        </span>
-        <span ng-show="editing" ng-submit="editing = false">
-          <form role="form">
-            <input type="text" ng-model="item.name" placeholder="Name" required />
-            <button class="btn" type="submit">Save</button>
-          </form>
-        </span>
-      </li>
-    </ul>
-    <hr>
-    <h2>New Student</h2>
-    <form ng-submit="addStudent()" role="form">
-      <div>
-        <input type="text" ng-model="studentName" id="student-name" placeholder="Enter name">
-      </div>
-      <button type="submit" class="btn">Submit</button>
-    </form>
-  </div>
+  <div ng-view></div>
 </body>
 </html>
